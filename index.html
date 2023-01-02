@@ -3,150 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="https://nicortiz.com/images/fa/fontawesome-pro-5.15.4-web/css/all.css">
+    <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
     <title>Dash</title>
 </head>
 <body>
-<style>
-    :root {
-        --light-green: #8BCB5A;
-        --darker-green: #577739;
-        --dark: #2D363E;
-        --light: #F8F9F6;
-        --accent: #36C7CD;
-    }
-
-    *, *::before, *::after {
-        margin: 0;
-        padding: 0;
-    }
-
-    * {
-        font-family:-apple-system,BlinkMacSystemFont,avenir next,avenir,helvetica neue,helvetica,ubuntu,roboto,noto,segoe ui,arial,sans-serif;
-        transition: .5s;
-    }
-
-    body {
-        background-color: var(--dark);
-        color: var(--dark);
-    }
-
-    a {
-        color: var(--light-green);
-        text-decoration: none;
-    }
-
-    a:hover {
-        color: var(--light);
-        background-color: var(--light-green);
-        margin: -2px -4px;
-        padding: 2px 4px;
-    }
-
-    #container {
-        background-color: var(--light);
-        display: grid;
-        grid-template-columns: 320px auto;
-        height: 100vh;
-        max-height: 100%;
-    }
-
-    #content-side {
-        display: grid;
-        overflow: auto;
-    }
-
-    .shadow {
-        box-shadow: 3px 3px 10px rgba(139, 203, 90, 0.5);
-        -webkit-box-shadow: 3px 3px 10px rgba(139, 203, 90, 0.5);
-        -moz-box-shadow: 3px 3px 10px rgba(139, 203, 90, 0.5);
-    }
-
-    #header {
-        display: grid;
-        grid-template-columns: auto min-content;
-        padding: 10px 20px;
-        margin: 20px;
-        background-color: var(--dark);
-        color: var(--light);
-        align-items: center;
-        border-radius: 10px;
-    }
-
-    #user-info {
-        display: grid;
-        align-items: center;
-        grid-template-columns: min-content min-content min-content;
-        grid-gap: 30px;
-        white-space: nowrap;
-        font-size: 1.25rem;
-    }
-
-    #main {
-        padding: 20px;
-        display: grid;
-        grid-template-columns: 4fr 1fr;
-        gap: 20px;
-        max-height: 100%;
-    }
-
-    #footer {
-        padding: 20px;
-    }
-
-    #sidebar {
-        background-color: var(--dark);
-        color: var(--light);
-        display: flex;
-        flex-direction: column;
-    }
-
-    #logo-container {
-        padding: 20px;
-    }
-
-    nav {
-        flex-grow: 1;
-    }
-
-    #sidebar a {
-        color: var(--light);
-    }
-
-    .nav-item {
-        padding: 20px;
-        font-size: 1.25rem;
-    }
-
-    .nav-item:hover {
-        background-color: var(--darker-green);
-        color: var(--light);
-        border-left: 15px solid var(--light-green);
-    }
-
-    .nav-item-selected {
-        color: var(--light-green);
-    }
-
-    #main-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 20px;
-    }
-
-    .main-card {
-        height: 200px;
-        border: 1px solid var(--dark);
-        padding: 20px;
-    }
-
-    .main-card p {
-        display: -webkit-box;
-        -webkit-line-clamp: 4;
-        -webkit-box-orient: vertical;
-        overflow: hidden;
-    }
-</style>
 
 <div id="container">
 
@@ -184,7 +45,7 @@
     <div id="content-side">
         <div id="header" class="shadow">
             <div id="search">
-                search
+                <input type="text" id="search_value" placeholder="Search...">
             </div>
             <div id="user-info">
                 <div>
@@ -204,73 +65,136 @@
                 <h1>Welcome</h1>
                 <div id="main-grid">
                     <div class="main-card">
-                        <p>Lorem ipsum dolor sit amet, <a href="#">card, consectetur adipiscing</a> elit. Quisque elit nulla, accumsan nec consequat vel, volutpat non diam. Phasellus metus sem, pharetra non odio sed, ultricies convallis nulla. Nulla ornare, libero ut consectetur suscipit, est urna dignissim orci, ac porttitor dolor turpis sit amet sem. In a orci nec turpis porttitor molestie. Integer id laoreet lorem, eget euismod velit. Suspendisse sed diam pharetra, pretium ipsum eget, aliquet arcu. Maecenas sed rutrum diam. Proin eleifend blandit elit sit amet sagittis. Curabitur quis orci justo.</p>
+                        <h3>Card header</h3>
+                        <p>Some text about it. Maybe it will go over a line or two? Let's force it longer. Maybe now?</p>
+                        <div class="card-options">
+                            <i class="no-select far fa-fw fa-star"></i>
+                            <i class="no-select far fa-fw fa-thumbs-up"></i>
+                            <i class="no-select far fa-fw fa-thumbs-down"></i>
+                        </div>
                     </div>
 
                     <div class="main-card">
-                        card
+                        <h3>Card header</h3>
+                        <p>Some text about it. Maybe it will go over a line or two? Let's force it longer. Maybe now?</p>
+                        <div class="card-options">
+                            <i class="no-select far fa-fw fa-star"></i>
+                            <i class="no-select far fa-fw fa-thumbs-up"></i>
+                            <i class="no-select far fa-fw fa-thumbs-down"></i>
+                        </div>
                     </div>
 
                     <div class="main-card">
-                        card
+                        <h3>Card header</h3>
+                        <p>Some text about it. Maybe it will go over a line or two? Let's force it longer. Maybe now?</p>
+                        <div class="card-options">
+                            <i class="no-select far fa-fw fa-star"></i>
+                            <i class="no-select far fa-fw fa-thumbs-up"></i>
+                            <i class="no-select far fa-fw fa-thumbs-down"></i>
+                        </div>
                     </div>
 
                     <div class="main-card">
-                        card
+                        <h3>Card header</h3>
+                        <p>Some text about it. Maybe it will go over a line or two? Let's force it longer. Maybe now?</p>
+                        <div class="card-options">
+                            <i class="no-select far fa-fw fa-star"></i>
+                            <i class="no-select far fa-fw fa-thumbs-up"></i>
+                            <i class="no-select far fa-fw fa-thumbs-down"></i>
+                        </div>
                     </div>
 
                     <div class="main-card">
-                        card
+                        <h3>Card header</h3>
+                        <p>Some text about it. Maybe it will go over a line or two? Let's force it longer. Maybe now?</p>
+                        <div class="card-options">
+                            <i class="no-select far fa-fw fa-star"></i>
+                            <i class="no-select far fa-fw fa-thumbs-up"></i>
+                            <i class="no-select far fa-fw fa-thumbs-down"></i>
+                        </div>
                     </div>
 
                     <div class="main-card">
-                        card
-                    </div>
-
-                    <div class="main-card">
-                        card
-                    </div>
-
-                    <div class="main-card">
-                        card
-                    </div>
-
-                    <div class="main-card">
-                        card
-                    </div>
-
-                    <div class="main-card">
-                        card
+                        <h3>Card header</h3>
+                        <p>Some text about it. Maybe it will go over a line or two? Let's force it longer. Maybe now?</p>
+                        <div class="card-options">
+                            <i class="no-select far fa-fw fa-star"></i>
+                            <i class="no-select far fa-fw fa-thumbs-up"></i>
+                            <i class="no-select far fa-fw fa-thumbs-down"></i>
+                        </div>
                     </div>
                 </div>
             </div>
 
             <div id="right">
+
+                <h1>Announcements</h1>
                 <div id="announcements">
-                    <h1>Announcements</h1>
-                    <div class="main-card">
-                        card
+                    <div class="announcement">
+                        <h3>Announcement Title</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ultrices posuere libero, ut facilisis mi vehicula at. Sed non tempus urna. Mauris velit lorem, facilisis a consequat vel, efficitur quis est. Duis vel leo a sapien placerat malesuada vel eget tellus. Vivamus nec imperdiet augue, sit amet accumsan tellus. Duis in venenatis felis. Quisque cursus rhoncus erat vel sodales. Vivamus maximus enim at massa congue pulvinar. Morbi commodo dolor arcu, id porttitor nulla molestie sed. Donec ut porta dui, eget pellentesque purus. Integer eget eleifend erat, vitae aliquam purus. Phasellus iaculis bibendum tellus, sit amet sagittis sapien ultrices eu. Nam vitae viverra neque.
+                        </p>
                     </div>
-                    <div class="main-card">
-                        card
+
+                    <div class="split"></div>
+
+                    <div class="announcement">
+                        <h3>Announcement Title</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ultrices posuere libero, ut facilisis mi vehicula at. Sed non tempus urna. Mauris velit lorem, facilisis a consequat vel, efficitur quis est. Duis vel leo a sapien placerat malesuada vel eget tellus. Vivamus nec imperdiet augue, sit amet accumsan tellus. Duis in venenatis felis. Quisque cursus rhoncus erat vel sodales. Vivamus maximus enim at massa congue pulvinar. Morbi commodo dolor arcu, id porttitor nulla molestie sed. Donec ut porta dui, eget pellentesque purus. Integer eget eleifend erat, vitae aliquam purus. Phasellus iaculis bibendum tellus, sit amet sagittis sapien ultrices eu. Nam vitae viverra neque.
+                        </p>
+                    </div>
+
+                    <div class="split"></div>
+
+                    <div class="announcement">
+                        <h3>Announcement Title</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ultrices posuere libero, ut facilisis mi vehicula at. Sed non tempus urna. Mauris velit lorem, facilisis a consequat vel, efficitur quis est. Duis vel leo a sapien placerat malesuada vel eget tellus. Vivamus nec imperdiet augue, sit amet accumsan tellus. Duis in venenatis felis. Quisque cursus rhoncus erat vel sodales. Vivamus maximus enim at massa congue pulvinar. Morbi commodo dolor arcu, id porttitor nulla molestie sed. Donec ut porta dui, eget pellentesque purus. Integer eget eleifend erat, vitae aliquam purus. Phasellus iaculis bibendum tellus, sit amet sagittis sapien ultrices eu. Nam vitae viverra neque.
+                        </p>
+                    </div>
+
+                    <div class="split"></div>
+
+                    <div class="announcement">
+                        <h3>Announcement Title</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ultrices posuere libero, ut facilisis mi vehicula at. Sed non tempus urna. Mauris velit lorem, facilisis a consequat vel, efficitur quis est. Duis vel leo a sapien placerat malesuada vel eget tellus. Vivamus nec imperdiet augue, sit amet accumsan tellus. Duis in venenatis felis. Quisque cursus rhoncus erat vel sodales. Vivamus maximus enim at massa congue pulvinar. Morbi commodo dolor arcu, id porttitor nulla molestie sed. Donec ut porta dui, eget pellentesque purus. Integer eget eleifend erat, vitae aliquam purus. Phasellus iaculis bibendum tellus, sit amet sagittis sapien ultrices eu. Nam vitae viverra neque.
+                        </p>
                     </div>
 
                 </div>
 
+                <h1>Trending</h1>
                 <div id="trending">
-                    <h1>Trending</h1>
-                    <div class="main-card">
-                        card
-                    </div>
-                    <div class="main-card">
-                        card
-                    </div>
+                    <div><div class="trending-item">
+                        <i class="trending-icon fas fa-3x fa-user-circle"></i>
+                        <span class="trending-id">@heynicortiz</span>
+                        <span class="trending-tagline">Creator</span>
+                    </div></div>
+
+                    <div> <div class="trending-item">
+                        <i class="trending-icon fas fa-3x fa-user-circle"></i>
+                        <span class="trending-id">@heynicortiz</span>
+                        <span class="trending-tagline">Creator</span>
+                    </div></div>
+
+                    <div><div class="trending-item">
+                        <i class="trending-icon fas fa-3x fa-user-circle"></i>
+                        <span class="trending-id">@heynicortiz</span>
+                        <span class="trending-tagline">Creator</span>
+                    </div></div>
+
+                    <div><div class="trending-item">
+                        <i class="trending-icon fas fa-3x fa-user-circle"></i>
+                        <span class="trending-id">@heynicortiz</span>
+                        <span class="trending-tagline">Creator</span>
+                    </div></div>
+
+                    <div><div class="trending-item">
+                        <i class="trending-icon fas fa-3x fa-user-circle"></i>
+                        <span class="trending-id">@heynicortiz</span>
+                        <span class="trending-tagline">Creator</span>
+                    </div></div>
                 </div>
             </div>
-        </div>
-
-        <div id="footer">
-            footer
         </div>
     </div>
 

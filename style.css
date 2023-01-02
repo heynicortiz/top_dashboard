@@ -1,0 +1,238 @@
+
+:root {
+    --light-green: #8BCB5A;
+    --darker-green: #577739;
+    --gray: #d4d5d1;
+    --dark: #2D363E;
+    --light: #F8F9F6;
+    --accent: #36C7CD;
+}
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+}
+
+* {
+    font-family:-apple-system,BlinkMacSystemFont,avenir next,avenir,helvetica neue,helvetica,ubuntu,roboto,noto,segoe ui,arial,sans-serif;
+    transition: .5s;
+}
+
+body {
+    background-color: var(--dark);
+    color: var(--dark);
+}
+
+a {
+    color: var(--light-green);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--light);
+    background-color: var(--light-green);
+    margin: -2px -4px;
+    padding: 2px 4px;
+}
+
+h1 {
+    font-size: 2rem;
+    font-weight: normal;
+    margin: 20px 0 20px 20px;
+}
+
+.no-select {
+    user-select: none;
+}
+
+#container {
+    background-color: var(--light);
+    display: grid;
+    grid-template-columns: 320px auto;
+    height: 100vh;
+    max-height: 100%;
+}
+
+#content-side {
+    display: grid;
+    overflow: auto;
+}
+
+.shadow, .main-card:hover {
+    box-shadow: 3px 3px 10px rgba(139, 203, 90, 0.5);
+    -webkit-box-shadow: 3px 3px 10px rgba(139, 203, 90, 0.5);
+    -moz-box-shadow: 3px 3px 10px rgba(139, 203, 90, 0.5);
+}
+
+#header {
+    display: grid;
+    grid-template-columns: auto min-content;
+    padding: 15px;
+    margin: 20px;
+    background-color: var(--dark);
+    color: var(--light);
+    align-items: center;
+    border-radius: 10px;
+}
+
+#search_value {
+    font-size: 2rem;
+    padding: 10px;
+    background-color: var(--dark);
+    border: 2px solid var(--darker-green);
+    border-radius: 8px;
+    color: var(--light);
+    outline: none;
+}
+
+#search_value:focus {
+    border-color: var(--light-green);
+    color: var(--light);
+    width: 600px;
+}
+
+#user-info {
+    display: grid;
+    align-items: center;
+    grid-template-columns: min-content min-content min-content;
+    grid-gap: 30px;
+    white-space: nowrap;
+    font-size: 1.25rem;
+}
+
+#main {
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+    gap: 20px;
+    max-height: 100%;
+}
+
+#sidebar {
+    background-color: var(--dark);
+    color: var(--light);
+    display: flex;
+    flex-direction: column;
+}
+
+#logo-container {
+    padding: 20px;
+}
+
+nav {
+    flex-grow: 1;
+}
+
+#sidebar a {
+    color: var(--light);
+}
+
+.nav-item {
+    padding: 20px;
+    font-size: 1.25rem;
+}
+
+.nav-item:hover {
+    background-color: var(--darker-green);
+    color: var(--light);
+    border-left: 15px solid var(--light-green);
+}
+
+.nav-item-selected {
+    color: var(--light-green);
+}
+
+#main-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 15px;
+}
+
+.main-card {
+    height: 200px;
+    border: 2px solid var(--gray);
+    border-radius: 8px;
+    padding: 10px;
+    display: grid;
+    grid-template-rows: 30px 1fr 25px;
+    background-color: white;
+}
+
+.main-card:hover {
+    border-color: var(--light-green);
+    box-shadow: 3px 3px 5px rgba(139, 203, 90, 0.5);
+    -webkit-box-shadow: 3px 3px 5px rgba(139, 203, 90, 0.5);
+    -moz-box-shadow: 3px 3px 5px rgba(139, 203, 90, 0.5);
+}
+
+.main-card p {
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.card-options {
+    text-align: right;
+}
+
+.card-options i {
+    margin-left: 10px;
+}
+
+#announcements {
+    padding: 20px;
+    border: 2px solid var(--gray);
+    border-radius: 8px;
+    display: grid;
+    grid-gap: 20px;
+    background-color: white;
+}
+
+#announcements h3 {
+    margin-bottom: 5px;
+}
+
+.announcement p {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.split {
+    width: 80%;
+    margin: 0 auto;
+    border-top: 1px solid var(--gray);
+}
+
+#trending {
+    padding: 20px;
+    background-color: white;
+    border: 2px solid var(--gray);
+    border-radius: 8px;
+    display: grid;
+    grid-row-gap: 20px;
+}
+
+.trending-item {
+    display: grid;
+    grid-template-areas:
+        "icon name"
+        "icon tagline";
+    grid-template-columns: min-content auto;
+    grid-column-gap: 20px;
+    align-items: center;
+}
+
+.trending-icon {
+    grid-area: icon;
+}
+
+.trending-item {
+    grid-area: name;
+}
+
+.trending-tagline {
+    grid-area: tagline;
+}
