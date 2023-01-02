@@ -1,4 +1,3 @@
-
 :root {
     --light-green: #8BCB5A;
     --darker-green: #577739;
@@ -15,7 +14,7 @@
 
 * {
     font-family:-apple-system,BlinkMacSystemFont,avenir next,avenir,helvetica neue,helvetica,ubuntu,roboto,noto,segoe ui,arial,sans-serif;
-    transition: .5s;
+    transition: all .5s;
 }
 
 body {
@@ -56,6 +55,7 @@ h1 {
 #content-side {
     display: grid;
     overflow: auto;
+    grid-template-rows: min-content auto;
 }
 
 .shadow, .main-card:hover {
@@ -67,7 +67,7 @@ h1 {
 #header {
     display: grid;
     grid-template-columns: auto min-content;
-    padding: 15px;
+    padding: 20px;
     margin: 20px;
     background-color: var(--dark);
     color: var(--light);
@@ -78,17 +78,28 @@ h1 {
 #search_value {
     font-size: 2rem;
     padding: 10px;
+    border-radius: 40px;
     background-color: var(--dark);
-    border: 2px solid var(--darker-green);
-    border-radius: 8px;
-    color: var(--light);
     outline: none;
+    color: var(--light);
 }
 
-#search_value:focus {
+#search_value::placeholder {
+    color: var(--light);
+}
+
+#search_value:not(:focus):placeholder-shown {
+    border: 2px solid var(--darker-green);
+    width: 35px;
+    /*transition: all .5s;*/
+}
+
+#search_value,
+#search_value:focus,
+#search_value:focus:not(:placeholder-shown)  {
     border-color: var(--light-green);
     color: var(--light);
-    width: 600px;
+    width: 300px;
 }
 
 #user-info {
